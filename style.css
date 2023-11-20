@@ -64,7 +64,8 @@ img {
     width: 14px;
     height: 14px;
     background-size: cover;
-    border: 1px solid rgb(228, 228, 228);
+    border: 2px solid rgb(228, 228, 228);
+    opacity: 1;
 
     margin: 5px;
     float: left;
@@ -72,12 +73,13 @@ img {
 }
 
 .color_sample:hover {
-    border: 1px solid rgb(101, 101, 101);
+    border: 2px solid rgb(161, 161, 161);
 
 }
 
 .color_sample:active {
-    border: 1px solid rgb(101, 101, 101);
+    opacity: .5;
+    border: 2px solid rgb(9, 9, 9);
 
 }
 

@@ -1,3 +1,9 @@
+// Array que conté totes les fitxes de les imatges
+// El programa crea tantes fitxes com posicions hi ha en aquest array
+// Les fitxes contenen informació de: 
+// FORMAT, TEXT DESCRIPTIU, PALETA DE COLORS
+
+
 export const IMAGES = [
     [
         'jpg', // Format
@@ -37,7 +43,7 @@ export const IMAGES = [
     ], [
         'jpg', // Format
         'Colors i icones', // Text
-        ['#F9BD39', '#8A9037', '#CE7024'], // Colors
+        ['#F9BD39', '#8A9037', '#CE7024', '#F4F4EC'], // Colors
         ''
     ], [
         'png', // Format
