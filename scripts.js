@@ -1,6 +1,6 @@
 import { IMAGES } from './images.js'
 const CONTAINER = document.getElementById('container')
-const TOOLTIP = document.getElementById('TOOLTIP');
+const TOOLTIP = document.getElementById('TOOLTIP')
 
 for (let i = 0; i < IMAGES.length; i++) {
 
@@ -69,7 +69,7 @@ document.addEventListener('mousemove', function (event) {
 
 function toHex(rgb) {
     if (rgb == '') { return 'alpha' }
-    let rgb_values = rgb.match(/[0-9]+/g);
+    let rgb_values = rgb.match(/[0-9]+/g)
     let hex_value = rgb_values
         .map(
             (x) => {
@@ -81,3 +81,37 @@ function toHex(rgb) {
         .toUpperCase()
     return `#${hex_value}`
 }
+
+function globalPalette() {
+    const allColors = IMAGES.reduce((accumulator, image) => {
+        const colors = image[2].filter(color => color !== '')
+        return accumulator.concat(colors)
+    }, [])
+
+    allColors.sort()
+    return allColors
+}
+
+console.log(globalPalette())
+
+
+function createcolor_band() {
+    const colorPalette = globalPalette()
+    const color_band = document.createElement('div')
+
+    color_band.style.display = 'flex'
+    color_band.style.width = '100%'
+    color_band.style.height = '30px'
+    color_band.style.marginBottom = '20px'
+
+    colorPalette.forEach(color => {
+        const color_div = document.createElement('div')
+        color_div.style.backgroundColor = color
+        color_div.style.flexGrow = 1
+        color_band.appendChild(color_div)
+    })
+
+    CONTAINER.insertBefore(color_band, CONTAINER.firstChild)
+}
+
+createcolor_band()
